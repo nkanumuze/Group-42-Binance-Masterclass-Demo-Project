@@ -25,8 +25,6 @@ TokenFarm is the last of the three contracts wherein the earlier two contracts w
 The front end is implemented using HTML, CSS and Javascript to achieve a simple but user-friendly UI to enable web interaction of the farming and staking process.
 
 
-
-
 ## Author(s)
 - Muze Nkanu (Group Lead)
 - Junaid Salaat
