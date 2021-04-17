@@ -45,6 +45,9 @@ const InputTitle = styled.div`
       /* cursor: pointer; */
 
    }
+   h4{
+      line-height: 1.75em;
+   }
    .balance_click {
       font-weight: 600;
       color: ${({theme}) => theme.textPrimary};
@@ -68,7 +71,7 @@ const Button = styled.div`
       font-size: 14px;
       letter-spacing: 0.8px;
       background-color: ${({ disable, theme }) => (disable ? theme.independenceDark : theme.buttonPrimary)};
-      color: ${({ disable, theme }) => (disable ? theme.greyText : 'white')};
+      color: white;
       pointer-events: ${({ disable, theme }) => (disable ? 'none' : 'auto')};
       border: none;
       width: 95%;

@@ -9,9 +9,9 @@ const FooterStyled = styled.div`
    height: 60px;
    margin-top: auto;
    position: fixed;
-   bottom: 0;
+   bottom: 30px;
    width: 100%;
-   font-size: 12px;
+   font-size: 11px;
    display: grid;
    grid-template-columns: 1fr 50px;
    z-index: 1;
@@ -19,7 +19,7 @@ const FooterStyled = styled.div`
 
 const FooterItems = styled.div`
    display: flex;
-   margin-left: 40px;
+   margin: 12px 0 0 10px;
    align-items: center;
    justify-self: center;
    .footer_item {
