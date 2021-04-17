@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;1,600&family=Source+Code+Pro&display=swap');
+html{
+    scroll-behavior: smooth;
+}
+
+html,body{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Nunito', sans-serif;
+    background-color: #50747c;
+    color: #fff;
+}
+
+h1{
+    color: #fd941d;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+p{
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+#title{
+    font-family: 'Source Code Pro', monospace ;
+    font-weight: bold;
+    margin: 2rem 0;
+}
+
+.hero-img{
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-img img{
+    width: 80%;
+}

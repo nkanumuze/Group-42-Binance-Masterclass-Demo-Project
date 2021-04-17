@@ -31,7 +31,7 @@ export const theme = (dark) => ({
    background3: dark ? independence : '#BDBDBD',
    backgroundError: dark ? '#301414' : '#fff8f8',
 
-   independenceDark: dark ? independenceDark : '#f8f8f8',
+   independenceDark: dark ? independenceDark : '#f3ba2f',
    independenceDarkHover: dark ? '#23252C' : '#f8f8f8',
    backgroundPaleHover: dark ? independenceHover : '#E5E5E5',
    buttonPrimary: dark ? '#5A5A5A': '#9ea0a1' ,

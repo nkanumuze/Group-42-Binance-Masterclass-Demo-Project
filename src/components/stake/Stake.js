@@ -71,6 +71,9 @@ const InputTitle = styled.div`
       /* cursor: pointer; */
 
    }
+   h4{
+      line-height: 1.75em;
+   }
    .balance_click {
       font-weight: 600;
       color: ${({theme}) => theme.textPrimary};
