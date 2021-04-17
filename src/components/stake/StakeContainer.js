@@ -30,8 +30,9 @@ class StakeContainer extends React.Component {
       console.log(this.state.confirmBtnLoading);
       
       console.log(await addNewStake(this.props.amount));
+      window.location.reload();
 
-      this.props.handleAmount(this.props.balanceNu);
+      // this.props.handleAmount(this.props.balanceNu);
       this.setState({ confirmBtnLoading: false, clicked: false });
    }
 
