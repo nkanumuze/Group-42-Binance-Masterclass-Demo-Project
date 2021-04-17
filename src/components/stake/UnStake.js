@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // import { dark as theme } from '../../themes/theme';
 import Slider from './Slider';
 import InputText from './Input';
+import {BlueButton, GreyButton} from "./Buttons";
 
 
 export const StakeWrapper = styled.div`
@@ -60,7 +61,6 @@ const InputHeader = styled.div`
       cursor: pointer;
    }
 `;
-
 const InputTitle = styled.div`
    display: flex;
    justify-content: space-between;
@@ -83,22 +83,19 @@ const Button = styled.div`
    display: grid;
    flex-direction: column;
    margin-top: 20px;
-   //background-color: ${({theme}) => theme.background2};
    color: ${({theme}) => theme.textPrimary};
-   
+
    span:last-child {
       font-size: 11px;
       text-align: center;
       color: #888;
-      
+
    }
    span:first-child {
       padding: 10px 0;
       font-size: 14px;
-      letter-spacing: 0.8px;       
+      letter-spacing: 0.8px;
       background-color: ${({disable, theme}) => disable ? theme.buttonPrimary : theme.background2};
-
-      // background-color: ${({ disable, theme }) => (disable ? theme.independenceDark : theme.buttonPrimary)};
       color: ${({ disable, theme }) => (disable ? theme.greyText : theme.textSecondary)};
       pointer-events: ${({ disable, theme }) => (disable ? 'none' : 'auto')};
       border: none;
@@ -116,38 +113,34 @@ const Button = styled.div`
    }
 `;
 
-const Stake = ({
-   balanceNu,
+const UnStake = ({
    amount,
-   amount_error,
-   disable,
+   confirmBtnLoading,
    handleAmount,
-   onButtonClick,
+   onUnStateButtonClick,
 }) => {
    return (
       <StakeWrapper>
+
          <InputHeader>
             <h2>Staking and Farming Project</h2>
          </InputHeader>
          <FormWrapper>
-
             <br/>
-
             <InputTitle>
-               <h4>Efficient incentive approach to solid waste minimization and control through Blockchain.</h4>
+               <h4>Efficient incentive approach to solid waster minimization and control through Blockchain.</h4>
             </InputTitle>
             <br/>
 
             <InputTitle>
-               <span>Amount</span>
-               <span onClick={() => handleAmount(balanceNu)}>
+               <span>Staked Amount</span>
+               {/*<span onClick={() => handleAmount(balanceNu)}>
                   Balance <b className="balance_click">{balanceNu.toFixed(2)}</b> CFP
-               </span>
+               </span>*/}
             </InputTitle>
 
             <InputText
                onChange={(e) => handleAmount(e.target.value)}
-               error={amount_error}
                placeholder="0.0"
                autoComplete="off"
                type="text"
@@ -156,13 +149,13 @@ const Stake = ({
                label="CFP"
             />
 
-            <Button disable={disable}>
-               <span onClick={onButtonClick}>Stake CFP!</span>
-               <span>Enter amount to continue.</span>
+            <Button>
+               <GreyButton onClick={onUnStateButtonClick} loading={confirmBtnLoading} text="UnStake CFP" />
+               {/*<span>Enter amount to continue.</span>*/}
             </Button>
          </FormWrapper>
       </StakeWrapper>
    );
 };
 
-export default Stake;
+export default UnStake;

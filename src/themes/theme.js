@@ -13,7 +13,7 @@ export const theme = (dark) => ({
    body: dark ? eerieBlack : 'white',
    // text
    textPrimary: independenceB,
-   textSecondary: dark ? '#9ea0a1' : '#5A5A5A',
+   textSecondary: dark ? '#f9f9f9' : eerieBlack,
    text3: dark ? '#b3b3b3' : '#C5C5C5',
    textPale: dark ? '#red' : 'grey',
    textWhiteBlue: dark ? '#f3ba2f' : '#f3ba2f',

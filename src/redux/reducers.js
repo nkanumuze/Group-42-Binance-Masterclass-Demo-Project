@@ -7,6 +7,7 @@ const accountHistory = new GetActionHistory()
 
 const userState = {
   darkMode: true,
+  isStaked: false,
   account: "",
   balETH: "",
   balanceNu: 0,
@@ -44,7 +45,9 @@ export const metamaskReducer = (state = metamaskInitialState, action) => {
 export const mainReducer = (state = userState, action) => {
   switch (action.type) {
     case t.SET_ACCOUNT_AND_NU:
-      return { ...state, account: action.account, balanceNu: action.balanceNu }
+      return { ...state, account: action.account, balanceNu: action.balanceNu, isStaked: true }
+    case t.SET_WALLET:
+      return { ...state, account: action.account, balanceNu: action.balanceNu, isStaked: false }
     case t.SET_FOOTER_DATA:
       return { ...state, footer: action.payload, isFooterDataLoading: action.bool }
     case t.SET_MANAGE_DATA:
@@ -80,6 +83,7 @@ export const mainReducer = (state = userState, action) => {
 const setStatus = (value, handleClick) => ({ type: value, payload: handleClick })
 
 export const setAccount = ({ account, balanceNu }) => ({ type: t.SET_ACCOUNT_AND_NU, account, balanceNu })
+export const setWallet = ({ account, balanceNu }) => ({ type: t.SET_WALLET, account, balanceNu })
 
 const _setFooterData = payload => ({ type: t.SET_FOOTER_DATA, payload })
 const _setBlockchainSetters = payload => ({ type: "SET_BLOCKCHAIN_SETTERS", payload })
@@ -90,14 +94,24 @@ export const getDataThunk = () => dispatch => {
   // dispatch(setAccount({ account: window.ethereum.selectedAddress, balanceNu: 0 }));
 
   serviceWeb3.getStakeData().then(payload => {
-    dispatch(setAccount(payload))
-    dispatch(setStatus(t.OK))
+    console.log(payload);
+    if (payload.balanceNu > 0){
+      dispatch(setAccount(payload))
+      dispatch(setStatus(t.OK))
+    }
+    else {
+      serviceWeb3.getWalletData().then(walletPayload => {
+        dispatch(setWallet(walletPayload))
+        dispatch(setStatus(t.OK))
+      })
+    }
+
   })
-  serviceWeb3.getFooterData().then(payload => dispatch(_setFooterData(payload)))
-  serviceWeb3.getManageData().then(payload => dispatch(setManageData(payload, false)))
-  accountHistory.getActionHistory().then(payload => dispatch({type: t.SET_ACTION_HISTORY_DATA, payload, bool: false}))
-  serviceWeb3.getWorklockData().then(payload => dispatch(setWorklockData(payload, false)))
-  serviceWeb3.getSetters().then(payload => dispatch(_setBlockchainSetters(payload)))
+  // serviceWeb3.getFooterData().then(payload => dispatch(_setFooterData(payload)))
+  // serviceWeb3.getManageData().then(payload => dispatch(setManageData(payload, false)))
+  // accountHistory.getActionHistory().then(payload => dispatch({type: t.SET_ACTION_HISTORY_DATA, payload, bool: false}))
+  // serviceWeb3.getWorklockData().then(payload => dispatch(setWorklockData(payload, false)))
+  // serviceWeb3.getSetters().then(payload => dispatch(_setBlockchainSetters(payload)))
 }
 
 export const setStatusThunk = (value, payload) => dispatch => {

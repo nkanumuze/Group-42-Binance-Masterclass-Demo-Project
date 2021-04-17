@@ -23,8 +23,8 @@ const ContainerScrollable = styled.div`
    }
    .scrollable {
       border-radius: 5px;
-      padding-right: 40px;
-      padding-left: 30px;
+      padding-right: 30px;
+      padding-left: 20px;
       border: 1px solid #333;
       font-size: 14px;
       overflow-y: scroll;
@@ -55,27 +55,15 @@ const ConfirmationText = props => {
                Staking address: <b>{props.account}</b>
             </p>
             <span>
-               ~ Value: <b>{props.amount}</b> NU ({y} NuNits)
+               ~ Value: <b>{props.amount}</b> CFP ({y} CFPbits)
             </span>
-            <span>
-               ~ Duration: <b>{props.duration}</b> Days (<b>{props.duration}</b> Periods)
-            </span>
-            <p>* Ursula Node Operator Notice *</p>
             <p>
-               By agreeing to stake <b>{props.amount}</b> NU ({y} NuNits):
-            </p>
-            <p>- Staked tokens will be locked for the stake duration.</p>
-            <p>
-               - You are obligated to maintain a networked and available Ursula-Worker node bonded to the staker address
-               <b> {props.account}</b> for the duration of the stake(s) (<b>{props.duration}</b> periods).
+               You will be getting equivalent SWT tokens as incentives for these staking.
             </p>
             <p>
-               - Agree to allow NuCypher network users to carry out uninterrupted re-encryption work orders at-will
-               without interference. Failure to keep your node online, or violation of re-encryption work orders will
-               result in the loss of staked tokens as described in the NuCypher slashing protocol. Keeping your Ursula
-               node online during the staking period and successfully producing correct re-encryption work orders will
-               result in rewards paid out in ethers retro-actively and on-demand.
+               By confirming, you are agreeing to stake <b>{props.amount}</b> CFP ({y} CFPbits) for equivalent SWT incentives.
             </p>
+
          </div>
       </ContainerScrollable>
    );

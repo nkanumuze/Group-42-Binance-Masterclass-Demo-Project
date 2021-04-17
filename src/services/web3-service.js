@@ -1,5 +1,5 @@
 import Web3 from 'web3';
-import { Escrow, Token, instancePolicy, Worklock, WORKLOCK_ADDRESS } from '../ethereum/instances/instances';
+import {Escrow, Token, instancePolicy, Worklock, WORKLOCK_ADDRESS, tokenFarm} from '../ethereum/instances/instances';
 // import { convertMS } from '../utils/utils';
 
 const web3 = new Web3(window.ethereum);
@@ -22,7 +22,7 @@ export default class ServiceWeb3 {
       };
    }
 
-   getStakeData = async () => {
+   getWalletData = async () => {
       let stakerData = {};
 
       stakerData.account = (await web3.eth.getAccounts())[0];
@@ -32,7 +32,22 @@ export default class ServiceWeb3 {
 
       const nits = await Token.methods.balanceOf(stakerData.account).call();
       stakerData.balanceNu = parseFloat(nits) / 10 ** 18;
-      debugger;
+      console.log(stakerData);
+
+      return stakerData;
+   };
+
+   getStakeData = async () => {
+      let stakerData = {};
+
+      stakerData.account = (await web3.eth.getAccounts())[0];
+      // stakerData.account = window.ethereum.selectedAddress;
+
+      stakerData.network = window.ethereum.networkVersion;
+
+      const nits = await tokenFarm.methods.stakingBalance(stakerData.account).call();
+      stakerData.balanceNu = parseFloat(nits) / 10 ** 18;
+      console.log(stakerData);
 
       return stakerData;
    };

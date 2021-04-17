@@ -31,12 +31,12 @@ const App = props => {
          const ethereum = window.ethereum;
          if (ethereum.selectedAddress !== null || address) {
             // to put BSC network integration with CFP and SWT abis
-            if (ethereum.networkVersion === '0' || ethereum.networkVersion === undefined) {
+            if (ethereum.networkVersion === '97' || ethereum.networkVersion === undefined) {
                props.getDataThunk();
                ethereum.on('accountsChanged', () => {
                   metamaskChecking();
-                  store.dispatch(setWorklockData({}, true));
-                  store.dispatch(setManageData({}, true));
+                  // store.dispatch(setWorklockData({}, true));
+                  // store.dispatch(setManageData({}, true));
                });
             } else {
                props.setStatusThunk(t.WRONG);
