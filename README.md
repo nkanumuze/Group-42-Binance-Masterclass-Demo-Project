@@ -1,6 +1,8 @@
 # Group-42-Binance-Masterclass-Demo-Project
 Group 42 Final Project for Binance 8 Weeks Africa Masterclass
 
+## Live Demo: https://bsc-masterclass-grp-42.netlify.app/
+
 Farming and Staking Project
 
 The project is aimed primarily at solid waste minimization and control using a token as an incentive mechanism.
