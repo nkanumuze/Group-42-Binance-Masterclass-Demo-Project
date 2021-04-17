@@ -62,17 +62,17 @@ const App = props => {
 
             <div className="my_content_wrapper">
                <Route path="/" exact>
-                  <Redirect to="/stake" />
+                  <Route
+                      path="/"
+                      render={() => (
+                          <StakeContainer
+                              amount={amount}
+                              handleAmount={handleAmountState}
+                          />
+                      )}
+                  />
                </Route>
-               <Route
-                  path="/stake"
-                  render={() => (
-                     <StakeContainer
-                        amount={amount}
-                        handleAmount={handleAmountState}
-                     />
-                  )}
-               />
+
             </div>
 
             <Footer />
