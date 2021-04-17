@@ -16,7 +16,6 @@
       "react": "^16.13.1",
       "react-blockies": "^1.4.1",
       "react-dom": "^16.13.1",
-      "react-ga": "^3.3.0",
       "react-modal": "^3.11.2",
       "react-redux": "^7.2.0",
       "react-router-dom": "^5.1.2",

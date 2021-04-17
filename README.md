@@ -1,7 +1,7 @@
-# Group-42-Binance-Masterclass-Demo-Project
-Group 42 Final Project for Binance 8 Weeks Africa Masterclass
+# Group-42-Binance-Masterclass
+Final Project for Binance 8 Weeks Africa Masterclass
 
-## Live Demo: https://bsc-masterclass-grp-42.netlify.app/
+### Live Demo: https://bsc-masterclass-grp-42.netlify.app/ 
 
 ### Farming and Staking Project
 
@@ -43,11 +43,6 @@ Feel free to check the [issues page](issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- We acknowledge the [Binance](binance.com) and [White Matrix](https://medium.com/white-matrix/) for the support and training through the 8 weeks of Binance MasterClass for African Developers.
-
 
 
 
