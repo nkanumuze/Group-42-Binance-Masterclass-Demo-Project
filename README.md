@@ -31,10 +31,10 @@ The front end is implemented using HTML, CSS and Javascript to achieve a simple 
 - Muze Nkanu (Group Lead)
 - Junaid Salaat
 - Adetunji Azeez
-- Chinedu E.N.
+- Chinedu Emmanuel Nwadike
 - Emmanuel Ezenwigbo
 - Christine Njoroge
-- Udogwu
+- Udogwu Emiri
 
 ## 🤝 Contributing
 
