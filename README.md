@@ -34,6 +34,11 @@ The front end is implemented using HTML, CSS and Javascript to achieve a simple 
 - Christine Njoroge
 - Udogwu Emiri
 
+## Acknowledgments
+
+- We acknowledge the [Binance](binance.com) and [White Matrix](https://medium.com/white-matrix/) for the support and training through the 8 weeks of Binance MasterClass for African Developers.
+
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
